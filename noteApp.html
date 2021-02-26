@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteApp</title>
+    <link rel="stylesheet" href="./note.css">
+</head>
+<body>
+    <div id="noteApp">
+        <h2 align='center'>记事本</h2>
+        <input id='inputTodo' type="text" placeholder="请输入事项..." v-model='inputTodo' @keyup.enter='addTodo'>
+        <ul id="todo">
+            <li v-for='(item,index) in todo'>
+                <div class="number">{{index+1}}.&emsp;</div>
+                <div class="things">{{item}}</div>
+                <div class="delete">
+                    <button class="btnDelete" @click='delTodo(index)'>×</button>
+                </div>
+            </li>
+            <div class="footer" v-show='todo.length!=0'>
+                <div class="total">{{todo.length}}个待办事项</div>
+                <div class="clear"><button @click='clear'>清空事项</button></div>
+            </div>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:'#noteApp',
+            data:{
+                todo:['吃饭','睡觉','打豆豆'],
+                inputTodo:'记下一件事情吧~'          
+            },
+            methods: {
+                addTodo:function(){
+                    if(this.inputTodo!=''){
+                        this.todo.push(this.inputTodo);
+                    }else{
+                        alert('请先输入待办事项~');
+                    }
+                },
+                delTodo:function(index){
+                    this.todo.splice(index,1);
+                },
+                clear:function(){
+                    this.todo=[];
+                }
+            }
+        })
+    </script>
+</body>
+</html>

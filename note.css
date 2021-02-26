@@ -1,0 +1,63 @@
+h2{
+    letter-spacing: 30px;
+}
+#inputTodo{
+    display: block;
+    width: 300px;
+    height: 40px;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 20px;
+    padding:0;
+}
+li{
+    list-style: none;
+    display: block;
+    width: 300px;
+    height: 40px;
+    margin:  0 auto;
+    border: 1px solid black;
+    /* 解决border重叠 */
+    margin-top: -1px;
+    font-size: 20px;
+    line-height: 40px;
+    
+}
+ul{
+    padding: 0;
+}
+.number{
+    margin: 0;
+    line-height: 40px;
+    float: left;
+}
+.things{
+    float: left;
+}
+.delete{
+    float: right;
+    margin-right: 10px;
+}
+.btnDelete{
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin-top:5px;
+    cursor: pointer;
+}
+.footer{
+    width: 300px;
+    height: 40px;
+    margin:  0 auto;
+    border: 1px solid black;
+    line-height: 40px;
+}
+.total{
+    float: left;
+}
+.clear{
+    float: right;
+}
+.clear button{
+    cursor: pointer;
+}
